@@ -7,7 +7,10 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.ibatis.session.SqlSession;
+
 import com.imooc.bean.Message;
+import com.imooc.db.DBAccess;
 
 /**
  * 和message表相关的数据库操作
@@ -18,7 +21,7 @@ public class MessageDao {
 	/**
 	 * 根据查询条件查询消息列表
 	 */
-	public List<Message> queryMessageList(String command, String description) {
+	/*public List<Message> queryMessageList(String command, String description) {
 		List<Message> messageList = new ArrayList<Message>();
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -49,6 +52,25 @@ public class MessageDao {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}
+		return messageList;
+	}*/
+	
+	public List<Message> queryMessageList(String command, String description) {
+		DBAccess dbAccess = new DBAccess();
+		SqlSession sqlSession = null;
+		List<Message> messageList = new ArrayList<Message>();
+		try {
+			sqlSession = dbAccess.getSqlSession();
+			//通过sqlSession执行sql语句
+			messageList = sqlSession.selectList("Message.queryMessageList");
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if(null != sqlSession) {
+				sqlSession.close();
+			}
 		}
 		return messageList;
 	}
