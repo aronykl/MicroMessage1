@@ -29,8 +29,14 @@
     <result column="content" jdbcType="VARCHAR" property="content"/>
   </resultMap>
 
-  <select id="queryMessageList" resultMap="UserResult">
-    SELECT id,command,description,content FROM message
+  <select id="queryMessageList" parameterType="com.imooc.bean.Message" resultMap="UserResult">
+    SELECT id,command,description,content FROM message where 1=1
+    <if test="command != null and !&quot;&quot;.equals(command.trim())">
+    	and command = #{command}
+    </if>
+    <if test="description != null and !&quot;&quot;.equals(description.trim())">
+    	and description like '%' #{description} '%'
+    </if>
   </select>
 
 </mapper>
