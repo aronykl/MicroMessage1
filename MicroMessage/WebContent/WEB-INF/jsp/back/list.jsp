@@ -10,8 +10,8 @@
 		<meta http-equiv="X-UA-Compatible"content="IE=9; IE=8; IE=7; IE=EDGE" />
 		<title>内容列表页面</title>
 		<link href="<%= bathPath %>resources/css/all.css" rel="stylesheet" type="text/css" />
-		<script src="<%= bathPath %>resources/js/jquery-1.8.0.min.js"></script>
-		<script src="<%= bathPath %>resources/js/list.js"></script>
+		<script src="<%= bathPath %>resources/js/common/jquery-1.8.0.min.js"></script>
+		<script src="<%= bathPath %>resources/js/back/list.js"></script>
 	</head>
 	<body style="background: #e1e9eb;">
 		<form action="<%= bathPath %>list.action" id="mainForm" method="post">
