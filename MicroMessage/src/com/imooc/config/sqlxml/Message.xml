@@ -38,5 +38,9 @@
     	and description like '%' #{description} '%'
     </if>
   </select>
+  
+  <delete id="deleteOne" parameterType="int">
+  	delete from message where id = #{_parameter}
+  </delete>
 
 </mapper>

@@ -9,13 +9,21 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
   <servlet>
-  	<servlet-name>ListServlet</servlet-name>
-  	<servlet-class>com.imooc.servlet.ListServlet</servlet-class>
+    <servlet-name>ListServlet</servlet-name>
+    <servlet-class>com.imooc.servlet.ListServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>ListServlet</servlet-name>
-  	<url-pattern>/list.action</url-pattern>
+    <servlet-name>ListServlet</servlet-name>
+    <url-pattern>/list.action</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>DeleteOneService</servlet-name>
+    <servlet-class>com.imooc.servlet.DeleteOneService</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteOneService</servlet-name>
+    <url-pattern>/deleteOneService.action</url-pattern>
   </servlet-mapping>
 </web-app>
