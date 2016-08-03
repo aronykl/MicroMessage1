@@ -89,7 +89,7 @@ public class MessageDao {
 			sqlSession = dbAccess.getSqlSession();
 			//通过sqlSession执行sql语句
 			sqlSession.delete("Message.deleteOne", id);
-			
+			sqlSession.commit();
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

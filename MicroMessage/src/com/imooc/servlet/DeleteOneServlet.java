@@ -23,7 +23,7 @@ public class DeleteOneServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		//请求转发向页面跳转
-		req.getRequestDispatcher("/deleteOneService.action").forward(req, resp);
+		req.getRequestDispatcher("/list.action").forward(req, resp);
 	}
 	
 	@Override

@@ -20,7 +20,7 @@
   
   <servlet>
     <servlet-name>DeleteOneService</servlet-name>
-    <servlet-class>com.imooc.servlet.DeleteOneService</servlet-class>
+    <servlet-class>com.imooc.servlet.DeleteOneServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>DeleteOneService</servlet-name>
