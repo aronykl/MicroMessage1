@@ -98,5 +98,27 @@ public class MessageDao {
 			}
 		}
 	}
+	
+	
+	/**
+	 * 批量删除记录
+	 * @param id
+	 */
+	public void deleteBatch(List<Integer> idList) {
+		DBAccess dbAccess = new DBAccess();
+		SqlSession sqlSession = null;
+		try {
+			sqlSession = dbAccess.getSqlSession();
+			//通过sqlSession执行sql语句
+			sqlSession.delete("Message.deleteBatch", idList);
+			sqlSession.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if(null != sqlSession) {
+				sqlSession.close();
+			}
+		}
+	}
 
 }

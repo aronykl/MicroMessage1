@@ -26,4 +26,13 @@
     <servlet-name>DeleteOneService</servlet-name>
     <url-pattern>/deleteOneService.action</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>DeleteBatchService</servlet-name>
+    <servlet-class>com.imooc.servlet.DeleteBatchServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteBatchService</servlet-name>
+    <url-pattern>/deleteBatchService.action</url-pattern>
+  </servlet-mapping>
 </web-app>
